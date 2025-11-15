@@ -12,5 +12,4 @@ def count_characters(text):
             counts[characters] += 1 
         else:
             counts[characters] = 1
-
     return counts
