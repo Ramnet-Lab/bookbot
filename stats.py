@@ -7,9 +7,20 @@ def count_words(text):
 def count_characters(text):
     text = text.lower()
     counts = {}
-    for characters in text:
-        if characters in counts:
-            counts[characters] += 1 
+    for character in text:
+        if character in counts:
+            counts[character] += 1 
         else:
-            counts[characters] = 1
+            counts[character] = 1
     return counts
+
+def sorted_list_of_dicts(counts):
+    character_list = []
+    for character, count in counts.items():
+        character_list.append({"char": character, "num": count})
+    def get_num(item):
+        return item["num"]
+    character_list.sort(key=get_num, reverse=True)
+    return character_list
+    
+    
