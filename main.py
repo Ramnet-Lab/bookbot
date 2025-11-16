@@ -1,12 +1,15 @@
 from stats import count_words
 from stats import count_characters
 from stats import sorted_list_of_dicts
+import sys
 
 
+if len(sys.argv) < 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
 
-book = "/Users/bg/Code/bookbot/books/frankenstein.txt"
-
-    
+book = sys.argv[1]
+   
 def get_book_text():
     with open(book) as f:
         return f.read()
